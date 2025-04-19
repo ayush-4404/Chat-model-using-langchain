@@ -1,16 +1,19 @@
 from langchain_google_genai import ChatGoogleGenerativeAI as genAI
 from dotenv import load_dotenv
-load_dotenv()
 from langchain_core.messages import HumanMessage, SystemMessage,AIMessage
+
 model=genAI(model="gemini-1.5-pro")
 
+
+load_dotenv()
 chat_history = []
 
 SystemMessage=SystemMessage(content="You are an helpful AI assistant")
 chat_history.append(SystemMessage)
 
-#chat loop
 
+
+#chat loop
 while True:
     query=input("You: ")
     if query.lower() == "exit":
